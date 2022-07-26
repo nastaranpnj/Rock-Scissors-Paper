@@ -1,0 +1,84 @@
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link href="https://netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link href="style.css" rel="stylesheet"/>
+</head>
+<body>
+    <header class="container">
+        <div class="row justify-content-md-center">
+            <h1 class="col-md-auto">Rock/Paper/Sicors Game</h1>        
+        </div>
+    </header>
+	<section class="container my-5 setGame">
+		<div class="row">
+			<h4 class="col text-center">How many set do u want to play?</h4>
+			<div class="col-12">				
+				<div class="col-2 input-group mx-auto">
+				  <span class="input-group-btn">
+					  <button onclick="setNumber(event)" type="button" class="btn btn-danger btn-number"  data-type="minus" data-field="quant[2]">
+						<span class="glyphicon glyphicon-minus"></span>
+					  </button>
+				  </span>
+				  <input onfocusin="focusInputNumber(event)" onchange="changeInputNumber(event)" onkeydown="keydownInputNumber(event)" type="text" name="quant[2]" class="form-control input-number" value="10" min="1" max="100">
+				  <span class="input-group-btn">
+					  <button onclick="setNumber(event)" type="button" class="btn btn-success btn-number" data-type="plus" data-field="quant[2]">
+						  <span class="glyphicon glyphicon-plus" disabled></span>
+					  </button>
+				  </span>
+				</div>
+			</div>
+      <button onclick="startBtn(event)" class="col text-center btn btn-success">Start?</button>	
+		</div>
+	</section>
+    <section class="container runGame">
+        <div class="row">
+            <div class="col justify-content-md-center player1">
+                <h2 class="text-center">player1</h2>
+                <div class="h-100 player">
+                    <button onclick="choosen(event)" class="col-6 offset-md-3 justify-content-md-center btn btn-primary mb-2">Rock</button>
+                    <button onclick="choosen(event)" class="col-6 offset-md-3 justify-content-md-center btn btn-primary mb-2">scissors</button>
+                    <button onclick="choosen(event)" class="col-6 offset-md-3 justify-content-md-center btn btn-primary mb-2">paper</button>
+                </div>    
+            </div>
+            <div class="col-md-auto align-items-center">
+                <h2 class="text-center">State</h2>
+                <div class="row justify-content-center">
+                    <div class="col-6 text-center state" id="playerState">
+                      ---
+                    </div>
+                    <div class="col-6 text-center state" id="ComputerState">
+                      ---
+                    </div>
+                </div>
+                <div class="row justify-content-around">
+                    <div class="col-6 text-center">
+                      Winner:
+                    </div>
+                    <div class="col-6 text-center animated fadeInDown" id="winner">
+                      ---
+                    </div>
+                </div>
+                <h3 class="text-center">Scores:</h3>
+                <div class="row justify-content-center">
+                    <div class="col-6 text-center state" id="scorePlayer">
+                      0
+                    </div>
+                    <div class="col-6 text-center state" id="scoreComputer">
+                      0
+                    </div>
+                </div>
+            </div>
+            <div class="col justify-content-around player2">
+                <h2 class="col-md-auto text-center">Computer</h2>
+                <div class="h-100">
+                    <button onclick="computerChoose()" id="computerPlayer" disabled class="col-6 offset-md-3 justify-content-md-center btn btn-primary mb-2">Go</button>
+<!--                <button class="col-6 offset-md-3 justify-content-md-center btn-primary mb-2">scissors</button>
+                <button class="col-6 offset-md-3 justify-content-md-center btn-primary mb-2">paper</button>-->
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+<script src="script.js"></script>
+</html>
